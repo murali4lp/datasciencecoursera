@@ -1,0 +1,14 @@
+
+### Introduction
+This shiny app provides a prediction model for predicting wages of workers. The prediction model is built on the Wage data set in the ISLR package. It consists of Wage and other data like age, education, job class etc for a group of 3000 workers in the Mid-Atlantic region. 
+
+The prediction algorithm is based on a linear model where wages of workers are predicted based on age, job class, education and whether the worker has health insurance or not. 
+
+### Instructions for use
+
+1) The user needs to select values for age, job class, education and health insurance.
+
+2) The user then needs to click on submit.
+
+3) Based on the values selected by the user, the app provides the predicted wage for the worker based on the prediction algorithm executed in the back end server.
+

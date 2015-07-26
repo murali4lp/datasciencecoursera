@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Wage Prediction</title>
+  <meta charset="utf-8">
+  <meta name="description" content="Wage Prediction">
+  <meta name="author" content="">
+  <meta name="generator" content="slidify" />
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta http-equiv="X-UA-Compatible" content="chrome=1">
+  <link rel="stylesheet" href="libraries/frameworks/io2012/css/default.css" media="all" >
+  <link rel="stylesheet" href="libraries/frameworks/io2012/css/phone.css" 
+    media="only screen and (max-device-width: 480px)" >
+  <link rel="stylesheet" href="libraries/frameworks/io2012/css/slidify.css" >
+  <link rel="stylesheet" href="libraries/highlighters/highlight.js/css/tomorrow.css" />
+  <base target="_blank"> <!-- This amazingness opens all links in a new tab. -->  <link rel=stylesheet href="./assets/css/ribbons.css"></link>
+
+  
+  <!-- Grab CDN jQuery, fall back to local if offline -->
+  <script src="http://ajax.aspnetcdn.com/ajax/jQuery/jquery-1.7.min.js"></script>
+  <script>window.jQuery || document.write('<script src="libraries/widgets/quiz/js/jquery.js"><\/script>')</script> 
+  <script data-main="libraries/frameworks/io2012/js/slides" 
+    src="libraries/frameworks/io2012/js/require-1.0.8.min.js">
+  </script>
+  
+  
+
+</head>
+<body style="opacity: 0">
+  <slides class="layout-widescreen">
+    
+    <!-- LOGO SLIDE -->
+        <slide class="title-slide segue nobackground">
+  <hgroup class="auto-fadein">
+    <h1>Wage Prediction</h1>
+    <h2>Predicting wages based on age, job class and education of workers</h2>
+    <p><br/></p>
+  </hgroup>
+  <article></article>  
+</slide>
+    
+
+    <!-- SLIDES -->
+    <slide class="" id="slide-1" style="background:;">
+  <hgroup>
+    <h2>Introduction</h2>
+  </hgroup>
+  <article data-timings="">
+    <ul>
+<li><p>This shiny app provides a prediction model for predicting wages of workers</p></li>
+<li><p>The prediction model is built on the Wage data set in the ISLR package</p></li>
+<li><p>The data set consists of Wage and other data like age, education, job class etc for a group of 3000 workers in the Mid-Atlantic region</p></li>
+<li><p>The prediction algorithm is based on a linear model where wages of workers are predicted based on age, job class, education and whether the worker has health insurance or not. </p></li>
+</ul>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+<slide class="" id="slide-2" style="background:;">
+  <hgroup>
+    <h2>About the data set</h2>
+  </hgroup>
+  <article data-timings="">
+    <p>The predictor variables used in the linear model are age, job class, education and health insurance to predict wage of the worker. Summary for these data variables can be found below.</p>
+
+<pre><code class="r">library(ISLR)
+data(Wage)
+Wage &lt;- subset(Wage,select=c(wage,age,education,jobclass,health_ins))
+summary(Wage)
+</code></pre>
+
+<pre><code>##       wage             age                     education  
+##  Min.   : 20.09   Min.   :18.00   1. &lt; HS Grad      :268  
+##  1st Qu.: 85.38   1st Qu.:33.75   2. HS Grad        :971  
+##  Median :104.92   Median :42.00   3. Some College   :650  
+##  Mean   :111.70   Mean   :42.41   4. College Grad   :685  
+##  3rd Qu.:128.68   3rd Qu.:51.00   5. Advanced Degree:426  
+##  Max.   :318.34   Max.   :80.00                           
+##            jobclass     health_ins  
+##  1. Industrial :1544   1. Yes:2083  
+##  2. Information:1456   2. No : 917  
+##                                     
+##                                     
+##                                     
+## 
+</code></pre>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+<slide class="" id="slide-3" style="background:;">
+  <hgroup>
+    <h2>About the App</h2>
+  </hgroup>
+  <article data-timings="">
+    <p>Below is a quick snapshot of how the app looks like</p>
+
+<div style='text-align: center;'>
+    <img height='400' src='assets/img/app.png' />
+</div>
+
+<p>The shiny app can be accessed from <a href="https://murali4lp.shinyapps.io/ShinyApp-WagesData">here</a></p>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+<slide class="" id="slide-4" style="background:;">
+  <hgroup>
+    <h2>Instructions for using the App</h2>
+  </hgroup>
+  <article data-timings="">
+    <p>1) The user needs to select values for age, job class, education and health insurance.</p>
+
+<p>2) The user then needs to click on submit.</p>
+
+<p>3) Based on the values selected by the user, the app provides the predicted wage for the worker based on the prediction algorithm executed in the back end server.</p>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+    <slide class="backdrop"></slide>
+  </slides>
+  <div class="pagination pagination-small" id='io2012-ptoc' style="display:none;">
+    <ul>
+      <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=1 title='Introduction'>
+         1
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=2 title='About the data set'>
+         2
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=3 title='About the App'>
+         3
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=4 title='Instructions for using the App'>
+         4
+      </a>
+    </li>
+  </ul>
+  </div>  <!--[if IE]>
+    <script 
+      src="http://ajax.googleapis.com/ajax/libs/chrome-frame/1/CFInstall.min.js">  
+    </script>
+    <script>CFInstall.check({mode: 'overlay'});</script>
+  <![endif]-->
+</body>
+  <!-- Load Javascripts for Widgets -->
+  
+  <!-- LOAD HIGHLIGHTER JS FILES -->
+  <script src="libraries/highlighters/highlight.js/highlight.pack.js"></script>
+  <script>hljs.initHighlightingOnLoad();</script>
+  <!-- DONE LOADING HIGHLIGHTER JS FILES -->
+   
+  </html>
